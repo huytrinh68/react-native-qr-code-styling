@@ -7,7 +7,7 @@ If you have issues / suggestions / notes / questions, please open an issue or co
 
 ### Examples
 <p float="left">
-
+  <img style="display:inline-block" src="https://github.com/huytrinh68/react-native-qr-code-styling/blob/main/assets/react-native-qr-code-styling-1.png" width="240" />
 </p>
 
 ### Installation
