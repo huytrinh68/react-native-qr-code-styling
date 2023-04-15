@@ -1,118 +1,79 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  Dimensions,
+  Text,
+  TurboModuleRegistry,
 } from 'react-native';
+import QRGenerator from './src/QRGenerator';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+const {width} = Dimensions.get('window');
+const App = () => {
+  const viewDataBase64 = (e: string) => {
+    console.log('e', e);
   };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView
+      style={{
+        alignItems: 'center',
+        marginTop: 100,
+      }}>
+      <View style={{}}>
+        <QRGenerator
+          width={width}
+          height={width}
+          type={'svg'}
+          value="0000001xxx2345123xasxasxxxx87564"
+          dotOptions={{
+            type: 'classy-rounded',
+            color: 'green',
+            gradient: {
+              type: 'linear',
+              rotation: 100,
+              colorStops: [
+                {offset: 0, color: '#845EC2'},
+                {offset: 0.8, color: '#0081CF'},
+                {offset: 1, color: '#008F7A'},
+              ],
+            },
+          }}
+          cornerDotOptions={{
+            type: 'dots',
+            gradient: {
+              type: 'linear',
+              rotation: 100,
+              colorStops: [
+                {offset: 0, color: '#845EC2'},
+                {offset: 0.8, color: '#0081CF'},
+                {offset: 1, color: '#008F7A'},
+              ],
+            },
+          }}
+          cornerSquareOptions={{
+            type: 'extra-rounded',
+            gradient: {
+              type: 'linear',
+              rotation: 100,
+              colorStops: [
+                {offset: 0, color: '#845EC2'},
+                {offset: 0.8, color: '#0081CF'},
+                {offset: 1, color: '#008F7A'},
+              ],
+            },
+          }}
+          backgroundOptions={{
+            color: 'transparent',
+          }}
+          getBase64DataImage={viewDataBase64}
+          image={
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1025px-Instagram-Icon.png'
+          }
+          imageOptions={{hideBackgroundDots: false, imageSize: 0.5, margin: 0}}
+        />
+      </View>
     </SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
