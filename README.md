@@ -81,7 +81,7 @@ const viewDataBase64 = (e: string) => {};
 
 ### API Documentation
 This document follows the original documentation created by Denys Kozak. Please refer to [the original version]("https://github.com/kozakdenys/qr-code-styling#readme") for further details.
-Props structure
+
 
 Property               |Type                     |Default Value|Description
 -----------------------|-------------------------|-------------|-----------------------------------------------------
