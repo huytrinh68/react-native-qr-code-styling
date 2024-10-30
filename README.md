@@ -1,10 +1,11 @@
 # React Native QR Code Styling
-[![Version](https://img.shields.io/npm/v/react-native-qr-code-styling.svg)](https://www.npmjs.com/package/react-native-qr-code-styling)
-
 React Native library for generating QR codes with a logo and styling based on [qr-code-styling]("https://github.com/kozakdenys/qr-code-styling")
 
 If you have issues / suggestions / notes / questions, please open an issue or contact me. Let's create a cool library together.
-
+<p align="center">
+    <a href="https://www.npmjs.com/package/react-native-qr-code-styling"><img alt="npm version" src="https://img.shields.io/npm/v/react-native-qr-code-styling.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/react-native-qr-code-styling"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-qr-code-styling.svg?style=flat-square"></a>
+</p>
 ### Examples
 <p float="left">
     <img style="display:inline-block" src="https://github.com/huytrinh68/react-native-qr-code-styling/blob/main/assets/react-native-qr-code-styling-1.png" width="240" />
